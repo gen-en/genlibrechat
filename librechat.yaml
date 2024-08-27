@@ -1,4 +1,4 @@
-version: 1.0.5
+version: 1.1.5
 cache: true
 fileStrategy: "firebase"
 fileConfig:
@@ -28,5 +28,6 @@ fileConfig:
   avatarSizeLimit: 4
 
   registration:
+    socialLogins: ['github']
     allowedDomains:
       - "generis.ai"
