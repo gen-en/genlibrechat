@@ -27,7 +27,58 @@ fileConfig:
   # Limit for user avatar image size in MB, default: 2 MB
   avatarSizeLimit: 4
 
-  registration:
-    socialLogins: ['github']
-    allowedDomains:
-      - "generis.ai"
+# Example Registration Object Structure (optional)
+registration:
+  socialLogins: ['github']
+  allowedDomains:
+    - "generis.ai"
+
+speech:
+  speechTab:
+    conversationMode: true
+    advancedMode: false
+    speechToText:
+      engineSTT: "external"
+      languageSTT: "English (US)"
+      autoTranscribeAudio: true
+      decibelValue: -45
+      autoSendText: 0
+    textToSpeech:
+      engineTTS: "external"
+      voice: "alloy"
+      languageTTS: "en"
+      automaticPlayback: true
+      playbackRate: 1.0
+      cacheTTS: true
+  tts:
+    openai:
+      apiKey: '${TTS_API_KEY}'
+      model: 'tts-1'
+      voices: ['alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer']
+  stt:
+    openai:
+      apiKey: '${STT_API_KEY}'
+      model: 'whisper-1'
+
+  custom:
+    - name: "OpenRouter"
+      # For `apiKey` and `baseURL`, you can use environment variables that you define.
+      # recommended environment variables:
+      apiKey: "${OPENROUTER_KEY}" # NOT OPENROUTER_API_KEY
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default: ['google/gemini-exp-1206:free',
+                  'google/gemini-2.0-flash-thinking-exp:free']
+        fetch: true
+      titleConvo: true
+      titleModel: "google/gemini-exp-1206:free"
+      # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
+      dropParams: ["stop"]
+      modelDisplayLabel: "OpenRouter"
+
+rateLimits:
+  fileUploads:
+    ipMax: 100
+    ipWindowInMinutes: 60  # Rate limit window for file uploads per IP
+    userMax: 50
+    userWindowInMinutes: 60  # Rate limit window for file uploads per user
