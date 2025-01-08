@@ -77,11 +77,9 @@ endpoints:
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ["stop"]
       modelDisplayLabel: "OpenRouter"
-
-   - name: "GeminiBeta"
-    # For `apiKey` and `baseURL`, you can use environment variables that you define.
-    # recommended environment variables:
-      apiKey: "${GOOGLE_KEY}" # NOT OPENROUTER_API_KEY
+      
+    - name: "GeminiBeta"
+      apiKey: "${GOOGLE_KEY}"
       baseURL: "https://generativelanguage.googleapis.com/v1beta/"
       models:
         default: ['models/gemini-exp-1206',
