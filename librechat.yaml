@@ -1,4 +1,4 @@
-version: 1.2.0
+version: 1.2.1
 #Updated 31 Dec 2024
 cache: true
 fileStrategy: "firebase"
@@ -30,7 +30,6 @@ fileConfig:
 
 # Example Registration Object Structure (optional)
 registration:
-  socialLogins: ['github']
   allowedDomains:
     - "generis.ai"
 
@@ -68,7 +67,7 @@ endpoints:
       # For `apiKey` and `baseURL`, you can use environment variables that you define.
       # recommended environment variables:
       apiKey: "${OPENROUTER_KEY}" # NOT OPENROUTER_API_KEY
-      baseURL: "https://openrouter.ai/api/v1"
+      baseURL: "https://openrouter.ai/api/v1beta"
       models:
         default: ['google/gemini-exp-1206:free',
                   'google/gemini-2.0-flash-thinking-exp:free']
@@ -79,6 +78,21 @@ endpoints:
       dropParams: ["stop"]
       modelDisplayLabel: "OpenRouter"
 
+   - name: "GeminiBeta"
+    # For `apiKey` and `baseURL`, you can use environment variables that you define.
+    # recommended environment variables:
+      apiKey: "${GOOGLE_KEY}" # NOT OPENROUTER_API_KEY
+      baseURL: "https://generativelanguage.googleapis.com/v1beta/"
+      models:
+        default: ['models/gemini-exp-1206',
+                  'models/gemini-2.0-flash-thinking-exp']
+      fetch: true
+      titleConvo: true
+      titleModel: "models/gemini-exp-1206"
+      # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
+      dropParams: ["stop"]
+      modelDisplayLabel: "GeminiBeta"
+      
 rateLimits:
   fileUploads:
     ipMax: 100
