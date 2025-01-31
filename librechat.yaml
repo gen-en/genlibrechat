@@ -83,6 +83,18 @@ endpoints:
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ["stop"]
       modelDisplayLabel: "OpenRouter"
+    - name: "DeepSeek-R1 (Azure)"
+      # For `apiKey` and `baseURL`, you can use environment variables that you define.
+      # recommended environment variables:
+      apiKey: "${AZURE_DEEPSEEK_API_KEY}"
+      baseURL: "https://DeepSeek-R1-regpilot.eastus2.models.ai.azure.com/v1/"
+      models:
+        default: ['DeepSeek-R1']
+        fetch: false
+      titleConvo: false
+      titleModel: "DeepSeek-R1"
+      dropParams:  ["stop", "user", "frequency_penalty", "presence_penalty"]
+      modelDisplayLabel: "DeepSeek-R1"
       
 rateLimits:
   fileUploads:
