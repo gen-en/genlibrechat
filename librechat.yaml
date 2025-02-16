@@ -75,11 +75,10 @@ endpoints:
       apiKey: "${OPENROUTER_KEY}" # NOT OPENROUTER_API_KEY
       baseURL: "https://openrouter.ai/api/v1beta"
       models:
-        default: ['google/gemini-2.0-flash-exp:free', 'google/gemini-exp-1206:free', 
-                  'google/gemini-2.0-flash-thinking-exp:free']
+        default: ['google/gemini-2.0-pro-exp-02-05:free', 'google/gemini-2.0-flash-thinking-exp:free']
         fetch: false
       titleConvo: false
-      titleModel: "gemini-2.0-flash-exp"
+      titleModel: "gemini-2.0-flash-thinking-exp"
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ["stop"]
       modelDisplayLabel: "OpenRouter"
