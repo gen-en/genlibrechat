@@ -32,6 +32,7 @@ fileConfig:
 registration:
   allowedDomains:
     - "generis.ai"
+    - "gmail.com"
 
 speech:
   speechTab:
