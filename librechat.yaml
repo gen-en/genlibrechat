@@ -82,6 +82,15 @@ endpoints:
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ["stop"]
       modelDisplayLabel: "OpenRouter"
+    - name: "Deepseek (direct)"
+      apiKey: "${DEEPSEEK_API_KEY}"
+      baseURL: "https://api.deepseek.com/v1"
+      models:
+        default: ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"]
+        fetch: false
+      titleConvo: true
+      titleModel: "deepseek-chat"
+      modelDisplayLabel: "Deepseek"
     - name: "DeepSeek-R1 (Azure)"
       # For `apiKey` and `baseURL`, you can use environment variables that you define.
       # recommended environment variables:
