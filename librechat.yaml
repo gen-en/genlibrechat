@@ -32,6 +32,7 @@ fileConfig:
 registration:
   allowedDomains:
     - "generis.ai"
+    - "ulu-limited.com"
 
 speech:
   speechTab:
