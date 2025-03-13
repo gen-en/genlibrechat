@@ -1,6 +1,7 @@
 version: 1.2.1
 #Updated 31 Dec 2024
 cache: true
+
 fileStrategy: "firebase"
 fileConfig:
   endpoints:
@@ -28,11 +29,60 @@ fileConfig:
   # Limit for user avatar image size in MB, default: 2 MB
   avatarSizeLimit: 4
 
+  # Terms of service
+  termsOfService:
+    openNewTab: true
+    modalAcceptance: true
+    modalTitle: "Terms of Service for Generis Chat"
+    modalContent: |
+      # Terms and Conditions for Generis Chat
+
+      *Effective Date: February 18, 2025*
+
+      Welcome to GenerisAI Chat, These Terms of Service ("Terms") govern your use of our website and the services we offer. By accessing or using the Website, you agree to be bound by these Terms.
+
+      ## 1. User Data
+
+      We collect personal data, such as your name, email address, and payment information, as described in our Privacy Policy. This information is collected to provide and improve our services, process transactions, and communicate with you.
+
+      ## 2. Non-Personal Data Collection
+
+      The Website uses cookies to enhance user experience, analyze site usage, and facilitate certain functionalities. By using the Website, you consent to the use of cookies in accordance with our Privacy Policy.
+
+      ## 3. Use of the Website
+
+      You agree to use the Website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the Website. Prohibited behavior includes harassing or causing distress or inconvenience to any person, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within the Website.
+
+      ## 4. Governing Law
+
+      These Terms shall be governed by and construed in accordance with the laws of the United States, without giving effect to any principles of conflicts of law.
+
+      ## 5. Changes to the Terms
+
+      We reserve the right to modify these Terms at any time. We will notify users of any changes by email. Your continued use of the Website after such changes have been notified will constitute your consent to such changes.
+
+      ## 6. Contact Information
+
+      If you have any questions about these Terms, please contact us at info@generis.ai.
+
+      By using the Website, you acknowledge that you have read these Terms of Service and agree to be bound by them.
+
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  agents: true
+
 # Example Registration Object Structure (optional)
 registration:
   allowedDomains:
     - "generis.ai"
     - "ulu-limited.com"
+    - "@cognitivegrc.com"
 
 speech:
   speechTab:
