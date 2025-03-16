@@ -120,19 +120,6 @@ endpoints:
     # capabilities: ["execute_code", "file_search", "actions", "tools"]
     capabilities: ["actions", "tools"]
   custom:
-    - name: "OpenRouter"
-      # For `apiKey` and `baseURL`, you can use environment variables that you define.
-      # recommended environment variables:
-      apiKey: "${OPENROUTER_KEY}" # NOT OPENROUTER_API_KEY
-      baseURL: "https://openrouter.ai/api/v1beta"
-      models:
-        default: ['gemini-2.0-flash-exp', 'google/gemini-2.0-pro-exp-02-05:free', 'google/gemini-2.0-flash-thinking-exp:free']
-        fetch: false
-      titleConvo: false
-      titleModel: "gemini-2.0-flash-thinking-exp"
-      # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
-      dropParams: ["stop"]
-      modelDisplayLabel: "OpenRouter"
     # deepseek
     # https://platform.deepseek.com/api_keys
     # Model list: https://platform.deepseek.com/api-docs/pricing
