@@ -82,8 +82,7 @@ registration:
   allowedDomains:
     - "generis.ai"
     - "ulu-limited.com"
-    - "@cognitivegrc.com"
-    - "@protonmail.com"
+    - "cognitivegrc.com"
 
 speech:
   speechTab:
