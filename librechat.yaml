@@ -31,6 +31,7 @@ fileConfig:
 
 # Custom interface configuration
 interface:
+  customWelcome: "Welcome to Generis - Chat!"
   #code interpreter
   runCode: false
 
@@ -86,12 +87,13 @@ interface:
 registration:
   allowedDomains:
     - "generis.ai"
-    - "ulu-limited.com"
-    - "cognitivegrc.com"
-    - "capulaglobal.com"
-    - "gmail.com"
-    - "yahoo.com"
-
+    
+webSearch:
+  # ... variable configurations ...
+  searchProvider: "serper"    # Only use Serper for search
+  scraperType: "firecrawl"    # Only use Firecrawl for scraping
+  rerankerType: "jina"        # Only use Jina for reranking
+  
 speech:
   speechTab:
     conversationMode: true
@@ -121,19 +123,6 @@ speech:
 
 # Definition of custom endpoints
 endpoints:
-  assistants:
-     disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
-     pollIntervalMs: 750  # Polling interval for checking assistant updates
-     timeoutMs: 180000  # Timeout for assistant operations
-     # Should only be one or the other, either `supportedIds` or `excludedIds`
-     #supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
-     # excludedIds: ["asst_excludedAssistantId"]
-     #Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
-     privateAssistants: true # Does not work with `supportedIds` or `excludedIds`
-     # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
-     retrievalModels: ["gpt-4.1"]
-     # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-     capabilities: ["retrieval", "actions", "tools", "image_vision"]
   custom:
     # deepseek
     # https://platform.deepseek.com/api_keys
@@ -150,18 +139,6 @@ endpoints:
       summaryModel: "deepseek-chat"
       forcePrompt: false
       modelDisplayLabel: "DeepSeek"
-    - name: "DeepSeek-R1 (Azure-US Hosted)"
-      # For `apiKey` and `baseURL`, you can use environment variables that you define.
-      # recommended environment variables:
-      apiKey: "${AZURE_DEEPSEEK_API_KEY}"
-      baseURL: "https://DeepSeek-R1-regpilot.eastus2.models.ai.azure.com/v1/"
-      models:
-        default: ['DeepSeek-R1']
-        fetch: false
-      titleConvo: false
-      titleModel: "DeepSeek-R1"
-      dropParams:  ["stop", "user", "frequency_penalty", "presence_penalty"]
-      modelDisplayLabel: "DeepSeek-R1"
       
 rateLimits:
   fileUploads:
